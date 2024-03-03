@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const amenityDict = {};
 
     $('input[type="checkbox"]').change(function () {
-        const amenityID = $(this).data('id');
-        const amenityName = $(this).data('name');
+        const amenityID = $(this).attr('id');
+        const amenityName = $(this).attr('name');
 
         if ($(this).prop('checked')) {
             amenityDict[amenityID] = amenityName;
