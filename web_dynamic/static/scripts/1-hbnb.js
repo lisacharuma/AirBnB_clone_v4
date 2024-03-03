@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const amenityDict = {};
+	const amenityDict = {};
 
-    $('input[type="checkbox"]').change(function () {
-        const amenityID = $(this).attr('id');
-        const amenityName = $(this).attr('name');
+	$('input[type="checkbox"]').change(function () {
+		const amenityID = $(this).attr('id');
+		const amenityName = $(this).attr('name');
 
-        if ($(this).prop('checked')) {
-            amenityDict[amenityID] = amenityName;
-        } else {
-            delete amenityDict[amenityID];
-        }
 
-        updateAmenitiesList();
-    });
+		if ($(this).prop('checked')) {
+			amenityDict[amenityID] = amenityName;
+		} else {
+			delete amenityDict[amenityID];
+						            }
 
-    function updateAmenitiesList() {
-        const amenitiesList = Object.values(amenityDict).join(', ');
-        $('.popover h4').text(amenitiesList);
-    }
+		updateAmenitiesList();
+	});
+
+	function updateAmenitiesList() {
+		const amenitiesList = Object.values(amenityDict).join(', ');
+		$('.popover h4').text(amenitiesList);
+	}
 });
-
